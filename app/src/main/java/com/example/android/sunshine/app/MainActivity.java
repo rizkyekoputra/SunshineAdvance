@@ -136,6 +136,12 @@ public class MainActivity extends ActionBarActivity implements ForecastFragment.
         }
     }
 
+    /**
+     * Check the device to make sure it has Google Play Service APK. If
+     * it doesn't, display a dialog that allow users to download the APK from
+     * the Google Play Store or enable it in the device's system settings.
+     * @return
+     */
     private boolean checkPlayServices() {
         GoogleApiAvailability apiAvailability = GoogleApiAvailability.getInstance();
         int resultCode = apiAvailability.isGooglePlayServicesAvailable(this);
