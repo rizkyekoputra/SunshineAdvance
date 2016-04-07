@@ -206,5 +206,6 @@
 
     <string name="condition_unknown">Unknown (<xliff:g id="low">%1$s</xliff:g>)</string>
 
+    <string name="gcm_defaultSenderId" translatable="false"></string>
 
 </resources>
