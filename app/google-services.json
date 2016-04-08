@@ -1,17 +1,17 @@
 {
   "project_info": {
-    "project_id": "firstgproject-1274",
-    "project_number": "1010697818200",
-    "name": "firstGProject"
+    "project_id": "mythic-computer-127418",
+    "project_number": "750777665062",
+    "name": "Sunshine"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1010697818200:android:3caeb874bdb82d44",
-        "client_id": "android:com.example.android.sunshine",
+        "mobilesdk_app_id": "1:750777665062:android:83b792e26f07bf18",
+        "client_id": "android:com.example.android.sunshine.app",
         "client_type": 1,
         "android_client_info": {
-          "package_name": "com.example.android.sunshine",
+          "package_name": "com.example.android.sunshine.app",
           "certificate_hash": []
         }
       },

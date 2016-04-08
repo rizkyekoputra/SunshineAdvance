@@ -37,6 +37,7 @@ public class RegistrationIntentService extends IntentService {
                     String token = instanceID.getToken(getString(R.string.gcm_defaultSenderId),
                             GoogleCloudMessaging.INSTANCE_ID_SCOPE, null);
                     sendRegistrationToServer(token);
+                    Log.d(TAG, "TOKEEEEEEEEEEEEEEEEEEEEEEEEn : " + token);
                 }
 
                 // You should store a boolean that indicates whether the generated token has been
