@@ -18,6 +18,7 @@ package com.example.android.sunshine.app;
 import android.content.Context;
 import android.database.Cursor;
 import android.support.v4.widget.CursorAdapter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +33,7 @@ import com.bumptech.glide.util.Util;
  * from a {@link Cursor} to a {@link android.widget.ListView}.
  */
 public class ForecastAdapter extends CursorAdapter {
+    public static final String LOG_TAG = ForecastAdapter.class.getSimpleName();
 
     private static final int VIEW_TYPE_COUNT = 2;
     private static final int VIEW_TYPE_TODAY = 0;
@@ -133,11 +135,13 @@ public class ForecastAdapter extends CursorAdapter {
         String high = Utility.formatTemperature(context, cursor.getDouble(ForecastFragment.COL_WEATHER_MAX_TEMP));
         viewHolder.highTempView.setText(high);
         viewHolder.highTempView.setContentDescription(context.getString(R.string.a11y_high_temp, high));
+        //Log.d(LOG_TAG, "SUHU TINGGI " + high);
 
         // Read low temperature from cursor
         String low = Utility.formatTemperature(context, cursor.getDouble(ForecastFragment.COL_WEATHER_MIN_TEMP));
         viewHolder.highTempView.setText(low);
         viewHolder.highTempView.setContentDescription(context.getString(R.string.a11y_low_temp, low));
+        //Log.d(LOG_TAG, "SUHU RENDAH " + low);
     }
 
     public void setUseTodayLayout(boolean useTodayLayout) {
