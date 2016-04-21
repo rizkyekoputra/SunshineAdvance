@@ -99,7 +99,7 @@
                 android:resource="@xml/syncadapter" />
         </service>
 
-        <!-- The Google Cloud Messaging Receiver and Services -->
+        <!-- The Google Cloud Messaging receiver and services -->
         <receiver
             android:name="com.google.android.gms.gcm.GcmReceiver"
             android:exported="true"
@@ -121,7 +121,7 @@
             android:name=".gcm.MyInstanceIDListenerService"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.google.android.gms.iid.InstanceID" />
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
             </intent-filter>
         </service>
         <service

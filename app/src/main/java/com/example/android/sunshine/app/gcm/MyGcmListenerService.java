@@ -19,27 +19,37 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * Created by Etit-Ind1 on 08/04/2016.
+ * Created by Etit-Ind1 on 20/04/2016.
  */
 public class MyGcmListenerService extends GcmListenerService {
+
     private static final String TAG = "MyGcmListenerService";
 
     private static final String EXTRA_DATA = "data";
     private static final String EXTRA_WEATHER = "weather";
-    private static final String EXTRA_LOCATION = "lcoation";
+    private static final String EXTRA_LOCATION = "location";
 
     public static final int NOTIFICATION_ID = 1;
 
+    /**
+     * Called when message is received.
+     *
+     * @param from SenderID of the sender.
+     * @param data Data bundle containing message data as key/value pairs.
+     *             For Set of keys use data.keySet().
+     */
     @Override
     public void onMessageReceived(String from, Bundle data) {
-        // Time to unparce the bundle!
+        // Time to unparcel the bundle!
         if (!data.isEmpty()) {
             // TODO: gcm_default sender ID comes from the API console
             String senderId = getString(R.string.gcm_defaultSenderId);
             if (senderId.length() == 0) {
                 Toast.makeText(this, "SenderID string needs to be set", Toast.LENGTH_LONG).show();
             }
+            // Not a bad idea to check that the message is coming from your server.
             if ((senderId).equals(from)) {
+                // Process message and then post a notification of the received message.
                 String weather = data.getString(EXTRA_WEATHER);
                 String location = data.getString(EXTRA_LOCATION);
                 String alert =
@@ -50,6 +60,12 @@ public class MyGcmListenerService extends GcmListenerService {
         }
     }
 
+    /**
+     *  Put the message into a notification and post it.
+     *  This is just one simple example of what you might choose to do with a GCM message.
+     *
+     * @param message The alert message to be posted.
+     */
     private void sendNotification(String message) {
         NotificationManager mNotificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
