@@ -128,8 +128,8 @@ public class ForecastAdapter extends CursorAdapter {
 
         // Read low temperature from cursor
         String low = Utility.formatTemperature(context, cursor.getDouble(ForecastFragment.COL_WEATHER_MIN_TEMP));
-        viewHolder.highTempView.setText(low);
-        viewHolder.highTempView.setContentDescription(context.getString(R.string.a11y_low_temp, low));
+        viewHolder.lowTempView.setText(low);
+        viewHolder.lowTempView.setContentDescription(context.getString(R.string.a11y_low_temp, low));
     }
 
     public void setUseTodayLayout(boolean useTodayLayout) {
