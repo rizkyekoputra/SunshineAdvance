@@ -5,6 +5,7 @@ import android.os.Parcel;
 import android.support.v4.util.LongSparseArray;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.widget.AbsListView;
 import android.widget.Checkable;

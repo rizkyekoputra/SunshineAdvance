@@ -201,7 +201,7 @@ public class ForecastFragment extends Fragment implements LoaderManager.LoaderCa
         // does crazy lifecycle related things.  It should feel like some stuff stretched out,
         // or magically appeared to take advantage of room, but data or place in the app was never
         // actually *lost*.
-        if (savedInstanceState != null {
+        if (savedInstanceState != null) {
             if (savedInstanceState.containsKey(SELECTED_KEY)) {
                 // The Recycler View probably hasn't even been populated yet.  Actually perform the
                 // swapout in onLoadFinished.
@@ -259,7 +259,7 @@ public class ForecastFragment extends Fragment implements LoaderManager.LoaderCa
         if (mPosition != RecyclerView.NO_POSITION) {
             outState.putInt(SELECTED_KEY, mPosition);
         }
-        mForecastAdapter.onSaveInstanceState(outState);
+        mForecastAdapter.onSavedInstanceState(outState);
         super.onSaveInstanceState(outState);
     }
 
